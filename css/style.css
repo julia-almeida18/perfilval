@@ -1,4 +1,19 @@
+/* VARIÁVEL DAS CORES*/
+
 :root, :root[data-theme='dark']{
- --primary-color: #f0f0f0;
- --primary-bg-color: #111217;   
+    --primary-color: #f0f0f0; /* cor principal textos */
+    --primary-bg-color: #272829; /* sintaxe obrigatória com hífen*/
+  /* crio a variavel e defino as cores  */
+ /*  bg= background-color */
+}
+
+/* TEMA LIGHT */
+:root[data-theme='light']{
+    --primary-color: #272829; /* cor principal textos */
+    --primary-bg-color: #f0f0f0; 
+}
+
+body {
+    background: var(--primary-bg-color); /* regra pra cor de fundo */ /* cor de fundo */
+    color: var(--primary-color); /* cor geral dos textos */
 }

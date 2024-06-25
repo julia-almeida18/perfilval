@@ -1,5 +1,12 @@
-/* VARIÁVEL DAS CORES*/
+/* Google Fonts */ /* shift + alt + a (adiciona comentário) */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
+
+
+
+
+
+/* VARIÁVEL DAS CORES*/
 :root, :root[data-theme='dark']{
     --primary-color: #f0f0f0; /* cor principal textos */
     --primary-bg-color: #272829; /* sintaxe obrigatória com hífen*/

@@ -482,4 +482,10 @@ html[data-theme='light'] .logo {
     h3 {
         font-size: 3.25rem;
     }
+    .header {
+        padding: 12rem 15rem 2rem;
+    }
+    .projetos, .sobre {
+        padding: 10rem 15rem 4rem;
+    }
 }

@@ -1,7 +1,6 @@
-
 /*  Google Fonts */  /* Atalho para Comentar Shift + ALT + A  */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+IT+Moderna:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 /* Variaveis das Cores */
 /* TEMA DARK */
@@ -11,7 +10,7 @@
     /* bg = background == cor do Fundo */
     --secondary-bg-color: #28292E;  
     --primary-border-color: #28292E;
-    --secondary-border-color: #56575A;
+    --secondary-border-color: #c1c2c4;
     --title-color: #F0F0F0;
     
     --link-color: #8f8f8f;
@@ -38,7 +37,7 @@
 /* Reset CSS */
 * {
     margin: 0; /*margem */
-    padding: 0px; /* preenchimento */
+    padding: 0; /* preenchimento */
     box-sizing: border-box;
     vertical-align: baseline;
     list-style: none;
@@ -64,7 +63,9 @@ a:hover {
 i {
    color: var(--icon-color); 
 }
-
+b{
+    font-weight: 400;
+}
 .header {
     display: flex;
     flex-flow: row wrap;
@@ -75,6 +76,7 @@ i {
     width: 100%;
     padding: 0.5rem 1rem;
     z-index: 2;/*sobreposição*/
+    background: var(--primary-bg-color);
 }
    
 .header-logo .logo{
@@ -83,14 +85,18 @@ i {
 }
 
 .header-logo .logo2 {
-    width: 6.25rem;
-    height: 1.25rem;
-    margin-left: 20px;
+    width: 15rem;
+    height: 2rem;
+    margin-left: 10px;
     position: relative;
-    bottom: 10px;
+    bottom: 5px;
 }
 
 html[data-theme='light'] .logo {
+    filter: invert(1);
+} 
+
+html[data-theme='light'] .logo2 {
     filter: invert(1);
 } 
 
@@ -99,6 +105,8 @@ html[data-theme='light'] .logo {
     color: var(--icon-color);
     cursor: pointer;
     transition: ease-in-out .4s;
+    float: right;
+    position: relative;
 }
 
 .menu {
@@ -156,6 +164,10 @@ html[data-theme='light'] .logo {
 
 .menu-principal {
     gap: 1rem;
+}
+
+.menu-social {
+   gap: 1rem; 
 }
 
 .btn {
@@ -330,20 +342,19 @@ html[data-theme='light'] .logo {
     flex-direction: column;
     gap: .5rem;
 }
-/* --- Cursos --- */
 .accordion-header {
     width: 100%;
     display: flex;
     padding: 0.75rem 1rem;
     justify-content: space-between;
     align-items: center;
-    background: transparent;
     border: 1px solid var(--primary-border-color);
+    background: transparent;
     text-align: left;
     cursor: pointer;
     transition: ease-in-out .3s;
+    border-radius: 0;
 }
-
 .accordion-header span {
     color: var(--title-color);
 }
@@ -351,35 +362,65 @@ html[data-theme='light'] .logo {
 .accordion-header.start {
     border-radius: 1rem 1rem 0rem 0rem;
 }
-
+  
 .accordion-header.end,
 .accordion-item.active .accordion-body.end {
     border-radius: 0rem 0rem 1rem 1rem;
 }
-
-.accordion-item.active .accordion-item.end {
+  
+.accordion-item.active .accordion-header.end{
     border-radius: 0;
 }
 
 .accordion-body {
-    /* display: none; */
+    display: none;
     padding: 1.25rem;
     flex-direction: column;
-    text-align: justify;
     align-items: flex-start;
-    gap: 1rem;
+    gap: .625rem;
     border: 1px solid var(--primary-border-color);
 }
-
 .accordion-item.active .accordion-header {
     background: var(--secondary-bg-color);
 }
-
 .accordion-item.active .accordion-body {
     display: flex;
 }
+.accordion-item.active .bi-caret-down-fill {
+    transform: rotate(180deg);
+}
 
-/* Rotacionar Icone */
+/* Contato */
+.contato {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    border-top: 1px solid var(--primary-border-color);
+    border-bottom: 1px solid var(--secondary-border-color);
+}
+.contato p {
+    text-align: center;
+}
+
+.contato .btn {
+    width: auto;
+}
+
+.contato .email {
+    text-transform: uppercase;
+}
+
+/* Roda Pé = Footer */
+footer {
+    margin-bottom: 5rem;
+}
+footer p {
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem;
+}
 
 /* =====  --------------------- ======= */
 
@@ -451,6 +492,12 @@ html[data-theme='light'] .logo {
         align-items: flex-start;
         gap: 4rem;
     }
+    .sobre-descricao h2 {
+        text-align: left;
+    }
+    .descricao-button {
+        justify-content: flex-start;
+    }
 }
 
 @media (min-width: 1200px) {
@@ -462,6 +509,9 @@ html[data-theme='light'] .logo {
     }
     #home {
         padding: 10rem 6rem 2rem;
+    }
+    .main-content .btn {
+        width: auto;
     }
     p, span, li {
         font-size: 1.15rem;
